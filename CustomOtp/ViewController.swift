@@ -18,7 +18,7 @@ class ViewController: UIViewController,customOtpDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         otpView.numberOfVelueInOTP(count: 5, spacingBetweenOTP: 20,txtColor: UIColor.white, fontStyle:UIFont.systemFont(ofSize: 20))
-        otpView.backgroundColorWithTransprantColor(r: 0.0/255.0, g: 0.0/255.0, b: 0.0/255.0, opecity: 0.8)
+        otpView.backgroundColorWithTransprantColor(r: 163.0/255.0, g: 165.0/255.0, b: 168.0/255.0, opecity: 0.8)
        otpView.borderWidthOTP = 1.0
        otpView.borderColorOTP = UIColor.black
 //        otpView.setTextfieldBottomLineWithColor(color: UIColor.green)
