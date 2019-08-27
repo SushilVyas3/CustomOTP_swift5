@@ -4,7 +4,8 @@ when user need insert OTP and handling the OTP.
 
 1. first in story board view controller add a view where use OTP
 
-2. View Class set CustomOtpView (follow image https://github.com/SushilVyas3/CustomOtp/issues/1#issue-485625269)
+2. View Class set CustomOtpView 
+![gitHubSetUpIMg](https://user-images.githubusercontent.com/23329039/63775225-862e3600-c8fc-11e9-9aa2-480bd8da65ca.png)
 
 3. first create iboutlet otp view to get instanse function in your class
 
