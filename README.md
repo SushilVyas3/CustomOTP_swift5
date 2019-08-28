@@ -50,3 +50,5 @@ func textFieldDidEnterOtp(otpStr:String)
 some screen demo
 
 ![boxType](https://user-images.githubusercontent.com/23329039/63853266-e0d89800-c9b7-11e9-9e15-1b3829f42166.gif)
+
+![underlineType](https://user-images.githubusercontent.com/23329039/63853338-0bc2ec00-c9b8-11e9-912f-8b0a98d62f2a.gif)
