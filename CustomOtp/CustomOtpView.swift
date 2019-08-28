@@ -70,7 +70,7 @@ class CustomOtpView: UIView,UITextFieldDelegate {
     func setShadowOnTextField(shadowColorText: UIColor, shodowOffsetWidth: CGFloat, shadowOffsetHight: CGFloat, shadowOpacityTxt: Float, shadowRadius: CGFloat) {
         isSetshadow = true
         for tf in aView.subviews{
-            tf.layer.backgroundColor = UIColor.clear.cgColor
+            tf.layer.backgroundColor = underLineColor.cgColor
             tf.layer.masksToBounds = false
             tf.layer.shadowColor = shadowColorText.cgColor
             tf.layer.shadowOffset = CGSize(width: shodowOffsetWidth, height: shadowOffsetHight)
@@ -86,6 +86,7 @@ class CustomOtpView: UIView,UITextFieldDelegate {
     ///   - b: blue color
     ///   - opecity: opecity
     func backgroundColorWithTransprantColor(r:CGFloat,g:CGFloat,b:CGFloat,opecity:CGFloat){
+        underLineColor = UIColor(red: r, green: g, blue: b, alpha: opecity)
         for tf in aView.subviews{
             tf.backgroundColor = UIColor(red: r, green: g, blue: b, alpha: opecity)
         }
@@ -122,7 +123,6 @@ class CustomOtpView: UIView,UITextFieldDelegate {
             textFld.borderStyle = .none
             textFld.textColor = txtColor
             textFld.font = fontStyle
-            textFld.backgroundColor = UIColor.clear
             textFld.addTarget(self, action: #selector(changeText(sender:)), for: .editingChanged)
             textFieldsArr.append(textFld)
             aView .addArrangedSubview(textFld)
