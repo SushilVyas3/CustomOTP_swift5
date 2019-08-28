@@ -17,11 +17,12 @@ class ViewController: UIViewController,customOtpDelegate {
     @IBOutlet weak var otpView: CustomOtpView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        otpView.numberOfVelueInOTP(count: 5, spacingBetweenOTP: 20,txtColor: UIColor.white, fontStyle:UIFont.systemFont(ofSize: 20))
-        otpView.backgroundColorWithTransprantColor(r: 163.0/255.0, g: 165.0/255.0, b: 168.0/255.0, opecity: 0.8)
-       otpView.borderWidthOTP = 1.0
-       otpView.borderColorOTP = UIColor.black
-//        otpView.setTextfieldBottomLineWithColor(color: UIColor.green)
+        otpView.numberOfVelueInOTP(count: 5, spacingBetweenOTP: 20,txtColor: UIColor.black, fontStyle:UIFont.systemFont(ofSize: 20))
+       // otpView.backgroundColorWithTransprantColor(r: 255.0/255.0, g: 255.0/255.0, b: 255.0/255.0, opecity: 0.2)
+//        otpView.setShadowOnTextField(shadowColorText: UIColor.gray, shodowOffsetWidth: 5, shadowOffsetHight: 5, shadowOpacityTxt: 0.7, shadowRadius: 2)
+//       otpView.borderWidthOTP = 1.0
+//       otpView.borderColorOTP = UIColor.black
+        otpView.setTextfieldBottomLineWithColor(color: UIColor.black, mainViewBackgroundColor:  UIColor(red: 237.0/255.0, green: 228.0/255.0, blue: 171.0/255.0, alpha: 1.0))
         otpView.otpDelegate = (self as customOtpDelegate)
         
         

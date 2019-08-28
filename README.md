@@ -32,7 +32,18 @@ otpView.backgroundColorWithTransprantColor(r: 110.0/255.0, g: 158/255.0, b: 255.
 otpView.setTextfieldBottomLineWithColor(color: UIColor.green)
 
 8. import custome delegate customOtpDelegate on your view controller to find otp string (call following function in your view controller)
+New commit _ add shadow on txt
+/// set shadow on textfield
+///
+/// - Parameters:
+///   - shadowColorText: color on shadow
+///   - shodowOffsetWidth: width of shadow
+///   - shadowOffsetHight: hight of shadow
+///   - shadowOpacityTxt: shadow opacity
+///   - shadowRadius: shadow radius
+func setShadowOnTextField(shadowColorText: UIColor, shodowOffsetWidth: CGFloat, shadowOffsetHight: CGFloat, shadowOpacityTxt: Float, shadowRadius: CGFloat)
 /// create a delegat when otp is enter
 ///
 /// - Parameter otpStr: give error msg when otp field not full fill when all otp are enter the shwo otp str
 func textFieldDidEnterOtp(otpStr:String)
+

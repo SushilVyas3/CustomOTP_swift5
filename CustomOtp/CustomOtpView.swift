@@ -16,6 +16,8 @@ class CustomOtpView: UIView,UITextFieldDelegate {
     var numberOfInput = 1
     var nextTag = 1
     var aView = UIStackView()
+    var underLineColor = UIColor()
+    var isSetshadow = Bool()
     private var otpInputStr = String()
     var textFieldsArr = [UITextField]()
     /// Discripation : use when show border width
@@ -38,12 +40,17 @@ class CustomOtpView: UIView,UITextFieldDelegate {
         }
     }
     
-    /// When not use box style then underline style for textfield
+
+    /// set underline on textField
     ///
-    /// - Parameter color: color of under line
-    func setTextfieldBottomLineWithColor(color:UIColor){
+    /// - Parameters:
+    ///   - color: underline color
+    ///   - mainViewBackgroundColor: superview background color
+    func setTextfieldBottomLineWithColor(color: UIColor, mainViewBackgroundColor: UIColor){
+        isSetshadow = false
+        underLineColor = color
         for tf in aView.subviews{
-        tf.layer.backgroundColor = UIColor.white.cgColor
+        tf.layer.backgroundColor = mainViewBackgroundColor.cgColor
         tf.layer.masksToBounds = false
         tf.layer.shadowColor = color.cgColor
         tf.layer.shadowOffset = CGSize(width: 0.0, height: 1.0)
@@ -52,6 +59,25 @@ class CustomOtpView: UIView,UITextFieldDelegate {
         }
     }
     
+    /// set shadow on textfield
+    ///
+    /// - Parameters:
+    ///   - shadowColorText: color on shadow
+    ///   - shodowOffsetWidth: width of shadow
+    ///   - shadowOffsetHight: hight of shadow
+    ///   - shadowOpacityTxt: shadow opacity
+    ///   - shadowRadius: shadow radius
+    func setShadowOnTextField(shadowColorText: UIColor, shodowOffsetWidth: CGFloat, shadowOffsetHight: CGFloat, shadowOpacityTxt: Float, shadowRadius: CGFloat) {
+        isSetshadow = true
+        for tf in aView.subviews{
+            tf.layer.backgroundColor = UIColor.clear.cgColor
+            tf.layer.masksToBounds = false
+            tf.layer.shadowColor = shadowColorText.cgColor
+            tf.layer.shadowOffset = CGSize(width: shodowOffsetWidth, height: shadowOffsetHight)
+            tf.layer.shadowOpacity = shadowOpacityTxt
+            tf.layer.shadowRadius = shadowRadius
+        }
+    }
     /// back ground color of textfield using for otp
     ///
     /// - Parameters:
@@ -85,7 +111,6 @@ class CustomOtpView: UIView,UITextFieldDelegate {
         aView.alignment = .fill
         aView.distribution = .fillEqually
         aView.axis = .horizontal
-        aView.backgroundColor = UIColor.black
         aView.spacing = spacingBetweenOTP
        
         for index in 1...count{
@@ -94,10 +119,11 @@ class CustomOtpView: UIView,UITextFieldDelegate {
             textFld.delegate = self
             textFld.tag = index
             textFld.keyboardType = .numberPad
-            textFld.addTarget(self, action: #selector(changeText(sender:)), for: .editingChanged)
             textFld.borderStyle = .none
             textFld.textColor = txtColor
             textFld.font = fontStyle
+            textFld.backgroundColor = UIColor.clear
+            textFld.addTarget(self, action: #selector(changeText(sender:)), for: .editingChanged)
             textFieldsArr.append(textFld)
             aView .addArrangedSubview(textFld)
             
@@ -108,7 +134,7 @@ class CustomOtpView: UIView,UITextFieldDelegate {
     
     @objc func changeText (sender : UITextField) {
         nextTag = sender.tag
-            if sender.tag <= numberOfInput{
+            if sender.tag <= numberOfInput {
                 if(sender.text?.count ?? 0 > 0){
                     nextTag += 1
                     
@@ -118,7 +144,6 @@ class CustomOtpView: UIView,UITextFieldDelegate {
                     if (isBackSpace == -92) {
                         print("Backspace was pressed")
                         nextTag -= 1
-                        
                     }
                 }
                 let nextResponder = sender.superview?.viewWithTag(nextTag) as UIResponder?
@@ -138,6 +163,13 @@ class CustomOtpView: UIView,UITextFieldDelegate {
                     sender.resignFirstResponder()
                     
                 }
+//                if isSetshadow == false {
+//                    if sender.text!.isEmpty || sender.text == " "{
+//                        sender.layer.shadowColor = underLineColor.cgColor
+//                    }else{
+//                       sender.layer.shadowColor = UIColor.clear.cgColor
+//                    }
+//                }
             }
         if otpInputStr.count == numberOfInput {
             otpDelegate?.textFieldDidEnterOtp(otpStr: otpInputStr)

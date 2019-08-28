@@ -19,17 +19,25 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l9b-WR-h5q" customClass="CustomOtpView" customModule="CustomOtp" customModuleProvider="target">
-                                <rect key="frame" x="32" y="418" width="350" height="60"/>
-                                <color key="backgroundColor" white="0.33333333333333331" alpha="0.14065250880281691" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <rect key="frame" x="32" y="111" width="350" height="60"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="RRM-Gq-pnZ"/>
                                 </constraints>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter Your OTP" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Nd-hU-6wD">
+                                <rect key="frame" x="123" y="64" width="168" height="27"/>
+                                <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.92977255582809448" green="0.89751684665679932" blue="0.65849608182907104" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="l9b-WR-h5q" firstAttribute="top" secondItem="7Nd-hU-6wD" secondAttribute="bottom" constant="20" id="8r9-UI-vsR"/>
                             <constraint firstItem="l9b-WR-h5q" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="fur-bk-ybc"/>
-                            <constraint firstItem="l9b-WR-h5q" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="hvs-Bl-UqE"/>
+                            <constraint firstItem="7Nd-hU-6wD" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hBX-jt-4D5"/>
+                            <constraint firstItem="7Nd-hU-6wD" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="ikB-Eh-KGi"/>
                             <constraint firstItem="l9b-WR-h5q" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="350:414" id="yXr-Zd-uE3"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
