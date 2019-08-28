@@ -47,3 +47,6 @@ func setShadowOnTextField(shadowColorText: UIColor, shodowOffsetWidth: CGFloat, 
 /// - Parameter otpStr: give error msg when otp field not full fill when all otp are enter the shwo otp str
 func textFieldDidEnterOtp(otpStr:String)
 
+some screen demo
+
+![boxType](https://user-images.githubusercontent.com/23329039/63853266-e0d89800-c9b7-11e9-9e15-1b3829f42166.gif)
