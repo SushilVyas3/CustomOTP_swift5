@@ -98,7 +98,7 @@ class CustomOtpView: UIView,UITextFieldDelegate {
     ///   - spacingBetweenOTP: space between textField
     ///   - txtColor: input text Color
     ///   - fontStyle: textfield font
-    func numberOfVelueInOTP(count:Int, spacingBetweenOTP:CGFloat, txtColor:UIColor, fontStyle:UIFont){
+    func numberOfVelueInOTP(count:Int, spacingBetweenOTP:CGFloat, txtColor:UIColor, fontStyle:UIFont, isSequretext: Bool){
         numberOfInput = count
         self .addSubview(aView)
         
@@ -123,6 +123,7 @@ class CustomOtpView: UIView,UITextFieldDelegate {
             textFld.borderStyle = .none
             textFld.textColor = txtColor
             textFld.font = fontStyle
+            textFld.isSecureTextEntry = isSequretext
             textFld.addTarget(self, action: #selector(changeText(sender:)), for: .editingChanged)
             textFieldsArr.append(textFld)
             aView .addArrangedSubview(textFld)
