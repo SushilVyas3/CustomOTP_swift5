@@ -18,7 +18,8 @@ when user need insert OTP and handling the OTP.
 ///   - spacingBetweenOTP: space between textField
 ///   - txtColor: input text Color
 ///   - fontStyle: textfield font style
-otpView.numberOfVelueInOTP(count: 5, spacingBetweenOTP: 20,txtColor: UIColor.green, fontStyle:UIFont.systemFont(ofSize: 20))
+otpView.numberOfVelueInOTP(count: 5, spacingBetweenOTP: 20, txtColor: UIColor.black,
+isSetUnderLine: false, txtFildFont: UIFont.systemFont(ofSize: 20))
 
 5. For text field border width and border color create a var to set border width an
 -otpView.borderWidthOTP = 1.0
@@ -26,10 +27,12 @@ otpView.numberOfVelueInOTP(count: 5, spacingBetweenOTP: 20,txtColor: UIColor.gre
 
 
 6. For textfield background color 
-otpView.backgroundColorWithTransprantColor(r: 110.0/255.0, g: 158/255.0, b: 255.0/255.0, opecity: 0.8)
+otpView.OTPbackGroundColor(r: 110.0/255.0, g: 158/255.0, b: 255.0/255.0, opecity: 0.8)
 
 7. when use UnderLine type textField then use (5 and 6 point not use)
-otpView.setTextfieldBottomLineWithColor(color: UIColor.green)
+otpView.numberOfVelueInOTP(count: 5, spacingBetweenOTP: 20, txtColor: UIColor.black,
+isSetUnderLine:  true, txtFildFont: UIFont.systemFont(ofSize: 20))
+in function issetUnderLine : true and false for underLine Show and hide
 
 8. import custome delegate customOtpDelegate on your view controller to find otp string (call following function in your view controller)
 New commit _ add shadow on txt
